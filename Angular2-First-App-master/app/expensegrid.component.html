@@ -1,0 +1,14 @@
+<table class="table table-hover">
+    <tr>
+        <th>Amount</th>
+        <th>Reason</th>
+        <th>Comments</th>
+        <th>Edit</th>
+    </tr>
+    <tr>
+        <td>{{ expense.amount }}</td>
+        <td>{{ expense.reason }}</td>
+        <td>{{ expense.comments }}</td>
+        <td><input type="button" value="edit" (click)=expenseValues(expense)></td>
+    </tr>
+</table>

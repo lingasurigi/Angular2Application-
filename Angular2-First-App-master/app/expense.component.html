@@ -1,0 +1,41 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+  <div style="width:100%;">
+    <div style="width:50%;">
+      <table style="width:50%">
+        <tr>
+          <td>Amount</td>
+          <td><input [(ngModel)]="expense.amount" name="expenseamount"></td> 
+        </tr>
+        <tr>
+          <td>Reason</td>
+          <td><input [(ngModel)]="expense.reason" name="expensereason"></td> 
+        </tr>
+        <tr>
+          <td>Comments</td>
+          <td><input [(ngModel)]="expense.comments" name="expensecomments"></td> 
+        </tr>
+        <tr>
+          <td><input type="submit" value="submit"></td>
+        </tr>
+      </table>
+    </div>
+    <div style="width:50%;">
+      <table style="border:1px solid;">
+        <tr style="border:1px solid;">
+          <td style="border:1px solid;" divFontColor>Amount</td><td style="border:1px solid;">{{ expenseNotEdit.amount }}</td>
+        </tr>
+        <tr style="border:1px solid;">
+          <td style="border:1px solid;" divFontColor>Reason</td><td style="border:1px solid;">{{ expenseNotEdit.reason }}</td>
+         </tr>
+        <tr style="border:1px solid;">
+          <td style="border:1px solid;" divFontColor>Comments</td><td style="border:1px solid;">{{ expenseNotEdit.comments }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</form>   
+<div *ngIf="show">
+    <expense-grid [expenseDataChild] = "expenseData" (addInputsToExpense)=displayValues($event)></expense-grid>
+</div>
+
+    
